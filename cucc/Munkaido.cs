@@ -6,10 +6,10 @@ namespace munkaido_nyilvantartas
     {
         public Munkavallalo Alkalmazott;
         public DateTime Date;
-        public Ido Start;
-        public Ido End;
+        public string Start;
+        public string End;
 
-        public Munkaido(Munkavallalo munkavallalo, DateTime date, Ido start, Ido end)
+        public Munkaido(Munkavallalo munkavallalo, DateTime date, string start, string end)
         {
             Alkalmazott = munkavallalo;
             Date = date;

@@ -82,11 +82,22 @@ namespace munkaido_nyilvantartas
 
         private void ComboBoxFeltoltes()
         {
+            nameCBOX.Items.Clear();
+            comboBox1.Items.Clear();
+
             for (int i = 0; i < munkavallalok.Count; i++)
             {
                 if (!comboBox1.Items.Contains(munkavallalok[i].Beosztas))
                 {
                     comboBox1.Items.Add(munkavallalok[i].Beosztas);
+                }
+            }
+
+            foreach (Munkavallalo item in munkavallalok)
+            {
+                if (!nameCBOX.Items.Contains(item.Nev))
+                {
+                    nameCBOX.Items.Add(item.Nev);
                 }
             }
         }
@@ -228,10 +239,7 @@ namespace munkaido_nyilvantartas
             {
                 isLoaded = false;
                 Munkavallalo alkalm = munkavallalok.Find(item => item.Nev.Equals(nameCBOX.Text));
-                Ido start_time = new Ido(startTBOX.Text);
-                Ido end_time = new Ido(endTBOX.Text);
-
-                munkaidok.Add(new Munkaido(alkalm, dateDTP.Value, start_time, end_time));
+                munkaidok.Add(new Munkaido(alkalm, dateDTP.Value, startTBOX.Text, endTBOX.Text));
                 MunkaidoGridUpdate();
                 MessageBox.Show("Hozzá van adva az új adat!");
             }
@@ -257,7 +265,6 @@ namespace munkaido_nyilvantartas
             //SetDefaultState();
             isLoaded = true;
         }
-
 
     }
 }

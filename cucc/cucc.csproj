@@ -52,7 +52,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ido.cs" />
     <Compile Include="Munkaido.cs" />
     <Compile Include="Munkavallalo.cs" />
     <Compile Include="Program.cs" />

@@ -411,6 +411,7 @@ namespace munkaido_nyilvantartas
             this.felvesz_munkaido_btn.TabIndex = 11;
             this.felvesz_munkaido_btn.Text = "Felvesz";
             this.felvesz_munkaido_btn.UseVisualStyleBackColor = true;
+            this.felvesz_munkaido_btn.Click += new System.EventHandler(this.felvesz_munkaido_btn_Click);
             // 
             // endTBOX
             // 
