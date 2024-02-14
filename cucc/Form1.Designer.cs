@@ -204,6 +204,11 @@ namespace munkaido_nyilvantartas
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.numericUpDown1.Location = new System.Drawing.Point(17, 165);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            2000000000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(148, 23);
             this.numericUpDown1.TabIndex = 13;
@@ -286,6 +291,8 @@ namespace munkaido_nyilvantartas
             // 
             this.munkavalalloGrid.AllowUserToAddRows = false;
             this.munkavalalloGrid.AllowUserToDeleteRows = false;
+            this.munkavalalloGrid.AllowUserToResizeColumns = false;
+            this.munkavalalloGrid.AllowUserToResizeRows = false;
             this.munkavalalloGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.munkavalalloGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nev,
@@ -299,9 +306,11 @@ namespace munkaido_nyilvantartas
             this.munkavalalloGrid.Name = "munkavalalloGrid";
             this.munkavalalloGrid.ReadOnly = true;
             this.munkavalalloGrid.RowHeadersVisible = false;
+            this.munkavalalloGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.munkavalalloGrid.Size = new System.Drawing.Size(1179, 372);
             this.munkavalalloGrid.TabIndex = 0;
             this.munkavalalloGrid.SelectionChanged += new System.EventHandler(this.munkavalalloGrid_SelectionChanged);
+            this.munkavalalloGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
             // 
             // nev
             // 

@@ -72,6 +72,13 @@ namespace munkaido_nyilvantartas
 
         private void DolgokUritese()
         {
+            munkavalalloGrid.ClearSelection();
+
+            munkavallalo_felveszBTN.Enabled = true;
+            munkavallalo_modositBTN.Enabled = false;
+            munkavallalo_torolBTN.Enabled = false;
+
+
             textBox1.Text = "";
             textBox2.Text = "";
             comboBox1.Text = "";
@@ -164,6 +171,10 @@ namespace munkaido_nyilvantartas
 
                 if (index > -1)
                 {
+
+                    munkavallalo_felveszBTN.Enabled = false;
+                    munkavallalo_modositBTN.Enabled = true;
+                    munkavallalo_torolBTN.Enabled = true;
 
                     textBox1.Text = munkavalalloGrid.Rows[index].Cells[0].Value.ToString();
                     textBox2.Text = munkavalalloGrid.Rows[index].Cells[1].Value.ToString();
@@ -258,6 +269,12 @@ namespace munkaido_nyilvantartas
             isLoaded = true;
         }
 
-
+        private void munkavalalloGrid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                DolgokUritese();
+            }
+        }
     }
 }
