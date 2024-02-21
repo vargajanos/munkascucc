@@ -21,6 +21,7 @@ namespace munkaido_nyilvantartas
         {
             InitializeComponent();
             MunkavallalokOlvasas();
+            MunkaidokOlvasas();
             ComboBoxFeltoltes();
             UpdateMunkaVallaloGrid();
 
@@ -37,6 +38,29 @@ namespace munkaido_nyilvantartas
                     munkavallalok.Add(new Munkavallalo(olvas.ReadLine()));
                 }
                 olvas.Close();
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Baj van a Munkavállalók olvasásánál");
+            }
+
+
+
+        }
+
+        private void MunkaidokOlvasas()
+        {
+            try
+            {
+                StreamReader olvas = new StreamReader("munkaidok.txt");
+                while (!olvas.EndOfStream)
+                {
+                    string[] sor = olvas.ReadLine().Split(';');
+                    Munkavallalo alkalm = munkavallalok.Find(item => item.Nev.Equals(sor[0]));
+                    munkaidok.Add(new Munkaido(alkalm, Convert.ToDateTime(sor[1]), sor[2], sor[3]));
+                }
+                olvas.Close();
+                MunkaidoGridUpdate();
             }
             catch (IOException)
             {
@@ -73,10 +97,15 @@ namespace munkaido_nyilvantartas
         private void DolgokUritese()
         {
             munkavalalloGrid.ClearSelection();
+            munkaido_datagrid.ClearSelection();
 
             munkavallalo_felveszBTN.Enabled = true;
             munkavallalo_modositBTN.Enabled = false;
             munkavallalo_torolBTN.Enabled = false;
+
+            torol_munkaido_btn.Enabled = false;
+            modosit_munkaido_btn.Enabled = false;
+            felvesz_munkaido_btn.Enabled = true;
 
 
             textBox1.Text = "";
@@ -85,6 +114,8 @@ namespace munkaido_nyilvantartas
             numericUpDown1.Value = 0;
             textBox4.Text = "";
             textBox5.Text = "";
+
+            ComboBoxFeltoltes();
         }
 
         private void ComboBoxFeltoltes()
@@ -134,7 +165,7 @@ namespace munkaido_nyilvantartas
             {
                 SaveToFile();
             }
-
+            DolgokUritese();
 
         }
 
@@ -232,6 +263,18 @@ namespace munkaido_nyilvantartas
                 }
                 file.Close();
 
+                // munkaido
+                StreamWriter munkaido_file = new StreamWriter("munkaidok.txt");
+                foreach (var item in munkaidok)
+                {
+                    munkaido_file.WriteLine("{0};{1};{2};{3}",
+                        item.Alkalmazott.Nev,
+                        item.Date.ToShortDateString(),
+                        item.Start,
+                        item.End
+                        );
+                }
+                munkaido_file.Close();
             }
             catch (IOException ex)
             {
@@ -239,9 +282,7 @@ namespace munkaido_nyilvantartas
 
             }
 
-
-
-
+            
         }
 
         private void felvesz_munkaido_btn_Click(object sender, EventArgs e)
@@ -252,7 +293,6 @@ namespace munkaido_nyilvantartas
                 Munkavallalo alkalm = munkavallalok.Find(item => item.Nev.Equals(nameCBOX.Text));
                 munkaidok.Add(new Munkaido(alkalm, dateDTP.Value, startTBOX.Text, endTBOX.Text));
                 MunkaidoGridUpdate();
-                MessageBox.Show("Hozzá van adva az új adat!");
             }
             else
             {
@@ -271,9 +311,9 @@ namespace munkaido_nyilvantartas
                 munkaido_datagrid.Rows[munkaido_datagrid.Rows.Count - 1].Cells[2].Value = item.Start.ToString();
                 munkaido_datagrid.Rows[munkaido_datagrid.Rows.Count - 1].Cells[3].Value = item.End.ToString();
             });
-            //Kiiras_munkaido();
+            SaveToFile();
             munkaido_datagrid.ClearSelection();
-            //SetDefaultState();
+            DolgokUritese();
             isLoaded = true;
         }
 
@@ -282,6 +322,77 @@ namespace munkaido_nyilvantartas
             if (e.KeyCode == Keys.Escape)
             {
                 DolgokUritese();
+            }
+        }
+
+        private void munkaido_datagrid_SelectionChanged(object sender, EventArgs e)
+        {
+            int index;
+            if (isLoaded)
+            {
+                if (selectedIndex == -1)
+                {
+                    index = munkaido_datagrid.CurrentRow.Index;
+                }
+                else
+                {
+                    index = selectedIndex;
+                }
+
+
+                if (index > -1)
+                {
+
+                    felvesz_munkaido_btn.Enabled = false;
+                    modosit_munkaido_btn.Enabled = true;
+                    torol_munkaido_btn.Enabled = true;
+
+                    nameCBOX.Text = munkaido_datagrid.Rows[index].Cells[0].Value.ToString();
+                    dateDTP.Text = munkaido_datagrid.Rows[index].Cells[1].Value.ToString();
+                    startTBOX.Text = munkaido_datagrid.Rows[index].Cells[2].Value.ToString();
+                    endTBOX.Text = munkaido_datagrid.Rows[index].Cells[3].Value.ToString();
+
+                }
+            }
+        }
+
+        private void torol_munkaido_btn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Biztosan törlöd az adatot?", "Megerősítés", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                isLoaded = false;
+                isChanged = true;
+
+                munkaidok.RemoveAt(munkaido_datagrid.CurrentRow.Index);
+                MunkaidoGridUpdate();
+                MessageBox.Show("Adat törölve");
+
+            }
+        }
+
+        private void modosit_munkaido_btn_Click(object sender, EventArgs e)
+        {
+            if (nameCBOX.Text == "" || startTBOX.Text == "" || endTBOX.Text == "")
+            {
+                MessageBox.Show("Valamelyik kötelező adat hiányzik");
+            }
+            else
+            {
+
+                int index = munkaido_datagrid.CurrentRow.Index;
+
+                Munkavallalo alkalm = munkavallalok.Find(item => item.Nev.Equals(nameCBOX.Text));
+                munkaidok[index].Alkalmazott = alkalm;
+                munkaidok[index].Date = dateDTP.Value;
+                munkaidok[index].Start = startTBOX.Text;
+                munkaidok[index].End = endTBOX.Text;
+                
+
+                isLoaded = false;
+                isChanged = true;
+
+                MunkaidoGridUpdate();
+                MessageBox.Show("Adat módosítva");
             }
         }
     }

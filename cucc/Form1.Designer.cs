@@ -388,6 +388,7 @@ namespace munkaido_nyilvantartas
             // 
             // nameCBOX
             // 
+            this.nameCBOX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameCBOX.FormattingEnabled = true;
             this.nameCBOX.Location = new System.Drawing.Point(24, 19);
             this.nameCBOX.Name = "nameCBOX";
@@ -402,6 +403,7 @@ namespace munkaido_nyilvantartas
             this.torol_munkaido_btn.TabIndex = 13;
             this.torol_munkaido_btn.Text = "Töröl";
             this.torol_munkaido_btn.UseVisualStyleBackColor = true;
+            this.torol_munkaido_btn.Click += new System.EventHandler(this.torol_munkaido_btn_Click);
             // 
             // modosit_munkaido_btn
             // 
@@ -411,6 +413,7 @@ namespace munkaido_nyilvantartas
             this.modosit_munkaido_btn.TabIndex = 12;
             this.modosit_munkaido_btn.Text = "Módosít";
             this.modosit_munkaido_btn.UseVisualStyleBackColor = true;
+            this.modosit_munkaido_btn.Click += new System.EventHandler(this.modosit_munkaido_btn_Click);
             // 
             // felvesz_munkaido_btn
             // 
@@ -500,6 +503,8 @@ namespace munkaido_nyilvantartas
             this.munkaido_datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.munkaido_datagrid.Size = new System.Drawing.Size(626, 248);
             this.munkaido_datagrid.TabIndex = 8;
+            this.munkaido_datagrid.SelectionChanged += new System.EventHandler(this.munkaido_datagrid_SelectionChanged);
+            this.munkaido_datagrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 

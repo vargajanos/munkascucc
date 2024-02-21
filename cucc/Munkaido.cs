@@ -15,6 +15,10 @@ namespace munkaido_nyilvantartas
             Date = date;
             Start = start;
             End = end;
+
+            /*double ido = (((Convert.ToInt32(start.Split(':')[0]) - Convert.ToInt32(end.Split(':')[0])) * 60)
+                    + (Convert.ToInt32(start.Split(':')[1]) - Convert.ToInt32(end.Split(':')[1]))) /60;
+            WorkTime = Math.Round(ido);*/
         }
     }
 }
