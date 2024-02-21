@@ -652,6 +652,7 @@ namespace munkaido_nyilvantartas
             this.eloleg_modositBTN.TabIndex = 15;
             this.eloleg_modositBTN.Text = "Módosít";
             this.eloleg_modositBTN.UseVisualStyleBackColor = true;
+            this.eloleg_modositBTN.Click += new System.EventHandler(this.eloleg_modositBTN_Click);
             // 
             // label11
             // 
@@ -672,6 +673,7 @@ namespace munkaido_nyilvantartas
             this.eloleg_torolBTN.TabIndex = 16;
             this.eloleg_torolBTN.Text = "Töröl";
             this.eloleg_torolBTN.UseVisualStyleBackColor = true;
+            this.eloleg_torolBTN.Click += new System.EventHandler(this.eloleg_torolBTN_Click);
             // 
             // elolegNumericCucc
             // 

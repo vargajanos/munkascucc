@@ -25,10 +25,31 @@ namespace munkaido_nyilvantartas
             InitializeComponent();
             MunkavallalokOlvasas();
             MunkaidokOlvasas();
+            ElolegekOlvasasa();
             ComboBoxFeltoltes();
             UpdateMunkaVallaloGrid();
 
 
+        }
+
+        private void ElolegekOlvasasa()
+        {
+            try
+            {
+                StreamReader olvas = new StreamReader("elolegek.txt");
+                while (!olvas.EndOfStream)
+                {
+                    string[] sor = olvas.ReadLine().Split(';');
+                    Munkavallalo alkalm = munkavallalok.Find(item => item.Nev.Equals(sor[0]));
+                    elolegek.Add(new Eloleg(alkalm, Convert.ToDateTime(sor[1]), Convert.ToInt32(sor[2])));
+                }
+                olvas.Close();
+                UpdateElolegGrid();
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Baj van a Elogeke olvasásánál");
+            }
         }
 
         private void MunkavallalokOlvasas()
@@ -292,12 +313,30 @@ namespace munkaido_nyilvantartas
                         );
                 }
                 munkaido_file.Close();
+
+                //Eloleg
+
+                StreamWriter eloleg_file = new StreamWriter("elolegek.txt");
+                foreach (var item in elolegek)
+                {
+                    eloleg_file.WriteLine("{0};{1};{2}",
+                        item.Alkalmazott.Nev,
+                        item.Datum.ToShortDateString(),
+                        item.Osszeg
+                        );
+                }
+                eloleg_file.Close();
+
+
+
             }
             catch (IOException ex)
             {
                 MessageBox.Show("Hiba a mentéskor!", ex.Message);
 
             }
+
+
 
 
         }
@@ -444,7 +483,10 @@ namespace munkaido_nyilvantartas
 
             });
 
+            SaveToFile();
+
             elolegDataGrid.ClearSelection();
+
 
             isLoaded = true;
         }
@@ -475,6 +517,46 @@ namespace munkaido_nyilvantartas
                     elolegDateTimePicker.Text = elolegDataGrid.Rows[index].Cells[1].Value.ToString();
                     elolegNumericCucc.Text = elolegDataGrid.Rows[index].Cells[2].Value.ToString();
                 }
+            }
+        }
+
+        private void eloleg_modositBTN_Click(object sender, EventArgs e)
+        {
+            if (elolegGroupBox.Text == "" || elolegDateTimePicker.Text == "" || elolegNumericCucc.Value == 0)
+            {
+                MessageBox.Show("Valamelyik kötelező adat hiányzik");
+            }
+            else
+            {
+
+                Munkavallalo alkalm = munkavallalok.Find(item => item.Nev.Equals(ElolegComboBox.Text));
+
+                int index = elolegDataGrid.CurrentRow.Index;
+
+                elolegek[index].Alkalmazott = alkalm;
+                elolegek[index].Datum = elolegDateTimePicker.Value;
+                elolegek[index].Osszeg = Convert.ToInt32(elolegNumericCucc.Value);
+
+
+                isLoaded = false;
+                isChanged = true;
+
+                UpdateElolegGrid();
+                MessageBox.Show("Adat módosítva");
+            }
+        }
+
+        private void eloleg_torolBTN_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Biztosan törlöd az adatot?", "Megerősítés", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                isLoaded = false;
+                isChanged = true;
+
+                elolegek.RemoveAt(elolegDataGrid.CurrentRow.Index);
+                UpdateElolegGrid();
+                MessageBox.Show("Adat törölve");
+
             }
         }
     }
