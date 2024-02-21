@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cucc;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ namespace munkaido_nyilvantartas
 
         static List<Munkavallalo> munkavallalok = new List<Munkavallalo>();
         static List<Munkaido> munkaidok = new List<Munkaido>();
+        static List<Eloleg> elolegek = new List<Eloleg>();
 
 
 
@@ -19,6 +21,7 @@ namespace munkaido_nyilvantartas
         static int selectedIndex = -1;
         public Form1()
         {
+
             InitializeComponent();
             MunkavallalokOlvasas();
             MunkaidokOlvasas();
@@ -99,6 +102,10 @@ namespace munkaido_nyilvantartas
             munkavalalloGrid.ClearSelection();
             munkaido_datagrid.ClearSelection();
 
+            elolegDataGrid.ClearSelection();
+
+
+
             munkavallalo_felveszBTN.Enabled = true;
             munkavallalo_modositBTN.Enabled = false;
             munkavallalo_torolBTN.Enabled = false;
@@ -106,6 +113,10 @@ namespace munkaido_nyilvantartas
             torol_munkaido_btn.Enabled = false;
             modosit_munkaido_btn.Enabled = false;
             felvesz_munkaido_btn.Enabled = true;
+
+            eloleg_felveszBTN.Enabled = true;
+            eloleg_modositBTN.Enabled = false;
+            eloleg_torolBTN.Enabled = false;
 
 
             textBox1.Text = "";
@@ -115,13 +126,16 @@ namespace munkaido_nyilvantartas
             textBox4.Text = "";
             textBox5.Text = "";
 
-            ComboBoxFeltoltes();
+            ElolegComboBox.Text = "";
+            elolegNumericCucc.Value = 0;
+
         }
 
         private void ComboBoxFeltoltes()
         {
             nameCBOX.Items.Clear();
             comboBox1.Items.Clear();
+            ElolegComboBox.Items.Clear();
 
             for (int i = 0; i < munkavallalok.Count; i++)
             {
@@ -136,8 +150,11 @@ namespace munkaido_nyilvantartas
                 if (!nameCBOX.Items.Contains(item.Nev))
                 {
                     nameCBOX.Items.Add(item.Nev);
+                    ElolegComboBox.Items.Add(item.Nev);
                 }
             }
+
+
         }
 
         private void UpdateMunkaVallaloGrid()
@@ -282,7 +299,7 @@ namespace munkaido_nyilvantartas
 
             }
 
-            
+
         }
 
         private void felvesz_munkaido_btn_Click(object sender, EventArgs e)
@@ -386,13 +403,78 @@ namespace munkaido_nyilvantartas
                 munkaidok[index].Date = dateDTP.Value;
                 munkaidok[index].Start = startTBOX.Text;
                 munkaidok[index].End = endTBOX.Text;
-                
+
 
                 isLoaded = false;
                 isChanged = true;
 
                 MunkaidoGridUpdate();
                 MessageBox.Show("Adat módosítva");
+            }
+        }
+
+        private void eloleg_felveszBTN_Click(object sender, EventArgs e)
+        {
+            if (elolegGroupBox.Text == "" || elolegDateTimePicker.Text == "" || elolegNumericCucc.Value == 0)
+            {
+                MessageBox.Show("Valamelyik kötelező adat hiányzik");
+            }
+            else
+            {
+                Munkavallalo alkalm = munkavallalok.Find(item => item.Nev.Equals(ElolegComboBox.Text));
+                elolegek.Add(new Eloleg(alkalm, elolegDateTimePicker.Value, Convert.ToInt32(elolegNumericCucc.Value)));
+
+                isLoaded = false;
+                isChanged = true;
+
+                UpdateElolegGrid();
+                DolgokUritese();
+            }
+        }
+
+        private void UpdateElolegGrid()
+        {
+            elolegDataGrid.Rows.Clear();
+            elolegek.ForEach(item =>
+            {
+                elolegDataGrid.Rows.Add();
+                elolegDataGrid.Rows[elolegDataGrid.Rows.Count - 1].Cells[0].Value = item.Alkalmazott.Nev;
+                elolegDataGrid.Rows[elolegDataGrid.Rows.Count - 1].Cells[1].Value = item.Datum.ToShortDateString();
+                elolegDataGrid.Rows[elolegDataGrid.Rows.Count - 1].Cells[2].Value = item.Osszeg.ToString();
+
+            });
+
+            elolegDataGrid.ClearSelection();
+
+            isLoaded = true;
+        }
+
+        private void elolegDataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            int index;
+            if (isLoaded)
+            {
+                if (selectedIndex == -1)
+                {
+                    index = munkavalalloGrid.CurrentRow.Index;
+                }
+                else
+                {
+                    index = selectedIndex;
+                }
+
+
+                if (index > -1)
+                {
+
+                    eloleg_felveszBTN.Enabled = false;
+                    eloleg_modositBTN.Enabled = true;
+                    eloleg_torolBTN.Enabled = true;
+
+                    ElolegComboBox.Text = elolegDataGrid.Rows[index].Cells[0].Value.ToString();
+                    elolegDateTimePicker.Text = elolegDataGrid.Rows[index].Cells[1].Value.ToString();
+                    elolegNumericCucc.Text = elolegDataGrid.Rows[index].Cells[2].Value.ToString();
+                }
             }
         }
     }

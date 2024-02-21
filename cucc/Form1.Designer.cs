@@ -73,6 +73,21 @@ namespace munkaido_nyilvantartas
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.elolegDataGrid = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elolegGroupBox = new System.Windows.Forms.GroupBox();
+            this.elolegDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.eloleg_modositBTN = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.eloleg_torolBTN = new System.Windows.Forms.Button();
+            this.elolegNumericCucc = new System.Windows.Forms.NumericUpDown();
+            this.eloleg_felveszBTN = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.ElolegComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,12 +96,17 @@ namespace munkaido_nyilvantartas
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.munkaido_datagrid)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.elolegDataGrid)).BeginInit();
+            this.elolegGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.elolegNumericCucc)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -531,6 +551,172 @@ namespace munkaido_nyilvantartas
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.elolegDataGrid);
+            this.tabPage3.Controls.Add(this.elolegGroupBox);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1184, 715);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Előlegek";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // elolegDataGrid
+            // 
+            this.elolegDataGrid.AllowUserToAddRows = false;
+            this.elolegDataGrid.AllowUserToDeleteRows = false;
+            this.elolegDataGrid.AllowUserToResizeColumns = false;
+            this.elolegDataGrid.AllowUserToResizeRows = false;
+            this.elolegDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.elolegDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.elolegDataGrid.Location = new System.Drawing.Point(23, 284);
+            this.elolegDataGrid.MultiSelect = false;
+            this.elolegDataGrid.Name = "elolegDataGrid";
+            this.elolegDataGrid.ReadOnly = true;
+            this.elolegDataGrid.RowHeadersVisible = false;
+            this.elolegDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.elolegDataGrid.Size = new System.Drawing.Size(578, 325);
+            this.elolegDataGrid.TabIndex = 19;
+            this.elolegDataGrid.SelectionChanged += new System.EventHandler(this.elolegDataGrid_SelectionChanged);
+            this.elolegDataGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Név";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Dátum";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Összeg";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // elolegGroupBox
+            // 
+            this.elolegGroupBox.Controls.Add(this.elolegDateTimePicker);
+            this.elolegGroupBox.Controls.Add(this.label9);
+            this.elolegGroupBox.Controls.Add(this.eloleg_modositBTN);
+            this.elolegGroupBox.Controls.Add(this.label11);
+            this.elolegGroupBox.Controls.Add(this.eloleg_torolBTN);
+            this.elolegGroupBox.Controls.Add(this.elolegNumericCucc);
+            this.elolegGroupBox.Controls.Add(this.eloleg_felveszBTN);
+            this.elolegGroupBox.Controls.Add(this.label13);
+            this.elolegGroupBox.Controls.Add(this.ElolegComboBox);
+            this.elolegGroupBox.Location = new System.Drawing.Point(23, 15);
+            this.elolegGroupBox.Name = "elolegGroupBox";
+            this.elolegGroupBox.Size = new System.Drawing.Size(438, 263);
+            this.elolegGroupBox.TabIndex = 18;
+            this.elolegGroupBox.TabStop = false;
+            this.elolegGroupBox.Text = "Előleg";
+            // 
+            // elolegDateTimePicker
+            // 
+            this.elolegDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.elolegDateTimePicker.Location = new System.Drawing.Point(17, 87);
+            this.elolegDateTimePicker.Name = "elolegDateTimePicker";
+            this.elolegDateTimePicker.Size = new System.Drawing.Size(148, 20);
+            this.elolegDateTimePicker.TabIndex = 18;
+            this.elolegDateTimePicker.Value = new System.DateTime(2024, 2, 8, 0, 0, 0, 0);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label9.Location = new System.Drawing.Point(204, 35);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(99, 23);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Alkalmazott";
+            // 
+            // eloleg_modositBTN
+            // 
+            this.eloleg_modositBTN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eloleg_modositBTN.Location = new System.Drawing.Point(334, 87);
+            this.eloleg_modositBTN.Name = "eloleg_modositBTN";
+            this.eloleg_modositBTN.Size = new System.Drawing.Size(80, 51);
+            this.eloleg_modositBTN.TabIndex = 15;
+            this.eloleg_modositBTN.Text = "Módosít";
+            this.eloleg_modositBTN.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(204, 137);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 23);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Összeg";
+            // 
+            // eloleg_torolBTN
+            // 
+            this.eloleg_torolBTN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eloleg_torolBTN.Location = new System.Drawing.Point(334, 158);
+            this.eloleg_torolBTN.Name = "eloleg_torolBTN";
+            this.eloleg_torolBTN.Size = new System.Drawing.Size(80, 51);
+            this.eloleg_torolBTN.TabIndex = 16;
+            this.eloleg_torolBTN.Text = "Töröl";
+            this.eloleg_torolBTN.UseVisualStyleBackColor = true;
+            // 
+            // elolegNumericCucc
+            // 
+            this.elolegNumericCucc.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.elolegNumericCucc.Location = new System.Drawing.Point(17, 137);
+            this.elolegNumericCucc.Maximum = new decimal(new int[] {
+            2000000000,
+            0,
+            0,
+            0});
+            this.elolegNumericCucc.Name = "elolegNumericCucc";
+            this.elolegNumericCucc.Size = new System.Drawing.Size(148, 23);
+            this.elolegNumericCucc.TabIndex = 13;
+            // 
+            // eloleg_felveszBTN
+            // 
+            this.eloleg_felveszBTN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.eloleg_felveszBTN.Location = new System.Drawing.Point(334, 23);
+            this.eloleg_felveszBTN.Name = "eloleg_felveszBTN";
+            this.eloleg_felveszBTN.Size = new System.Drawing.Size(80, 51);
+            this.eloleg_felveszBTN.TabIndex = 14;
+            this.eloleg_felveszBTN.Text = "Felvesz";
+            this.eloleg_felveszBTN.UseVisualStyleBackColor = true;
+            this.eloleg_felveszBTN.Click += new System.EventHandler(this.eloleg_felveszBTN_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(204, 86);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 23);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Dátum";
+            // 
+            // ElolegComboBox
+            // 
+            this.ElolegComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ElolegComboBox.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ElolegComboBox.FormattingEnabled = true;
+            this.ElolegComboBox.Location = new System.Drawing.Point(17, 38);
+            this.ElolegComboBox.Name = "ElolegComboBox";
+            this.ElolegComboBox.Size = new System.Drawing.Size(148, 23);
+            this.ElolegComboBox.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,6 +735,11 @@ namespace munkaido_nyilvantartas
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.munkaido_datagrid)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.elolegDataGrid)).EndInit();
+            this.elolegGroupBox.ResumeLayout(false);
+            this.elolegGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.elolegNumericCucc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -599,6 +790,21 @@ namespace munkaido_nyilvantartas
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox elolegGroupBox;
+        private System.Windows.Forms.DateTimePicker elolegDateTimePicker;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button eloleg_modositBTN;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button eloleg_torolBTN;
+        private System.Windows.Forms.NumericUpDown elolegNumericCucc;
+        private System.Windows.Forms.Button eloleg_felveszBTN;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox ElolegComboBox;
+        private System.Windows.Forms.DataGridView elolegDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }
 
