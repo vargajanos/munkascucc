@@ -48,7 +48,7 @@ namespace munkaido_nyilvantartas
             }
             catch (IOException)
             {
-                MessageBox.Show("Baj van a Elogeke olvasásánál");
+                MessageBox.Show("Baj van a Elogek olvasásánál");
             }
         }
 
@@ -367,7 +367,10 @@ namespace munkaido_nyilvantartas
                 munkaido_datagrid.Rows[munkaido_datagrid.Rows.Count - 1].Cells[2].Value = item.Start.ToString();
                 munkaido_datagrid.Rows[munkaido_datagrid.Rows.Count - 1].Cells[3].Value = item.End.ToString();
             });
-            SaveToFile();
+            if (isChanged)
+            {
+                SaveToFile();
+            }
             munkaido_datagrid.ClearSelection();
             DolgokUritese();
             isLoaded = true;
@@ -483,7 +486,10 @@ namespace munkaido_nyilvantartas
 
             });
 
-            SaveToFile();
+            if (isChanged)
+            {
+                SaveToFile();
+            }
 
             elolegDataGrid.ClearSelection();
 
