@@ -89,16 +89,16 @@ namespace munkaido_nyilvantartas
             this.label13 = new System.Windows.Forms.Label();
             this.ElolegComboBox = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.stat_dtp = new System.Windows.Forms.DateTimePicker();
-            this.year_beixelos = new System.Windows.Forms.CheckBox();
-            this.stat_grid = new System.Windows.Forms.DataGridView();
+            this.kifizetendo_lbl = new System.Windows.Forms.Label();
             this.fing_btn = new System.Windows.Forms.Button();
+            this.stat_grid = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kifizetendo_lbl = new System.Windows.Forms.Label();
+            this.year_beixelos = new System.Windows.Forms.CheckBox();
+            this.stat_dtp = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -747,23 +747,24 @@ namespace munkaido_nyilvantartas
             this.tabPage4.Text = "Statisztika";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // stat_dtp
+            // kifizetendo_lbl
             // 
-            this.stat_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stat_dtp.Location = new System.Drawing.Point(18, 18);
-            this.stat_dtp.Name = "stat_dtp";
-            this.stat_dtp.Size = new System.Drawing.Size(154, 20);
-            this.stat_dtp.TabIndex = 0;
+            this.kifizetendo_lbl.AutoSize = true;
+            this.kifizetendo_lbl.Location = new System.Drawing.Point(15, 411);
+            this.kifizetendo_lbl.Name = "kifizetendo_lbl";
+            this.kifizetendo_lbl.Size = new System.Drawing.Size(129, 13);
+            this.kifizetendo_lbl.TabIndex = 22;
+            this.kifizetendo_lbl.Text = "Össz fizetés: 0000000000";
             // 
-            // year_beixelos
+            // fing_btn
             // 
-            this.year_beixelos.AutoSize = true;
-            this.year_beixelos.Location = new System.Drawing.Point(187, 21);
-            this.year_beixelos.Name = "year_beixelos";
-            this.year_beixelos.Size = new System.Drawing.Size(39, 17);
-            this.year_beixelos.TabIndex = 1;
-            this.year_beixelos.Text = "Év";
-            this.year_beixelos.UseVisualStyleBackColor = true;
+            this.fing_btn.Location = new System.Drawing.Point(18, 44);
+            this.fing_btn.Name = "fing_btn";
+            this.fing_btn.Size = new System.Drawing.Size(75, 23);
+            this.fing_btn.TabIndex = 21;
+            this.fing_btn.Text = "Keresés";
+            this.fing_btn.UseVisualStyleBackColor = true;
+            this.fing_btn.Click += new System.EventHandler(this.fing_btn_Click);
             // 
             // stat_grid
             // 
@@ -786,15 +787,6 @@ namespace munkaido_nyilvantartas
             this.stat_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.stat_grid.Size = new System.Drawing.Size(952, 325);
             this.stat_grid.TabIndex = 20;
-            // 
-            // fing_btn
-            // 
-            this.fing_btn.Location = new System.Drawing.Point(18, 44);
-            this.fing_btn.Name = "fing_btn";
-            this.fing_btn.Size = new System.Drawing.Size(75, 23);
-            this.fing_btn.TabIndex = 21;
-            this.fing_btn.Text = "Keresés";
-            this.fing_btn.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -829,14 +821,23 @@ namespace munkaido_nyilvantartas
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // kifizetendo_lbl
+            // year_beixelos
             // 
-            this.kifizetendo_lbl.AutoSize = true;
-            this.kifizetendo_lbl.Location = new System.Drawing.Point(15, 411);
-            this.kifizetendo_lbl.Name = "kifizetendo_lbl";
-            this.kifizetendo_lbl.Size = new System.Drawing.Size(129, 13);
-            this.kifizetendo_lbl.TabIndex = 22;
-            this.kifizetendo_lbl.Text = "Össz fizetés: 0000000000";
+            this.year_beixelos.AutoSize = true;
+            this.year_beixelos.Location = new System.Drawing.Point(187, 21);
+            this.year_beixelos.Name = "year_beixelos";
+            this.year_beixelos.Size = new System.Drawing.Size(39, 17);
+            this.year_beixelos.TabIndex = 1;
+            this.year_beixelos.Text = "Év";
+            this.year_beixelos.UseVisualStyleBackColor = true;
+            // 
+            // stat_dtp
+            // 
+            this.stat_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stat_dtp.Location = new System.Drawing.Point(18, 18);
+            this.stat_dtp.Name = "stat_dtp";
+            this.stat_dtp.Size = new System.Drawing.Size(154, 20);
+            this.stat_dtp.TabIndex = 0;
             // 
             // Form1
             // 

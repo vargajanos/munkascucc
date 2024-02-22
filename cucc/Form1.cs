@@ -374,6 +374,7 @@ namespace munkaido_nyilvantartas
             munkaido_datagrid.ClearSelection();
             DolgokUritese();
             isLoaded = true;
+            MessageBox.Show(munkaidok[0].LedolgozottIdo.ToString());
         }
 
         private void munkavalalloGrid_KeyDown(object sender, KeyEventArgs e)
@@ -564,6 +565,56 @@ namespace munkaido_nyilvantartas
                 MessageBox.Show("Adat törölve");
 
             }
+        }
+
+        private void fing_btn_Click(object sender, EventArgs e)
+        {
+            StatisthickListaFeltoltes();
+
+            UpdateStatisthickGrid();
+        }
+
+        private void StatisthickListaFeltoltes()
+        {
+            
+            for (int i = 0; i < munkavallalok.Count; i++)
+            {
+
+            }
+            for (int i = 0; i < munkaidok.Count; i++)
+            {
+
+            }
+            for (int i = 0; i < elolegek.Count; i++)
+            {
+
+            }
+
+
+
+        }
+
+        private void UpdateStatisthickGrid()
+        {
+            stat_grid.Rows.Clear();
+            elolegek.ForEach(item =>
+            {
+                stat_grid.Rows.Add();
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[0].Value = item.Alkalmazott.Nev;
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[1].Value = item.Datum.ToShortDateString();
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[2].Value = item.Osszeg.ToString();
+
+            });
+
+            if (isChanged)
+            {
+                SaveToFile();
+            }
+
+            elolegDataGrid.ClearSelection();
+
+
+            isLoaded = true;
         }
     }
 }

@@ -8,6 +8,7 @@ namespace munkaido_nyilvantartas
         public DateTime Date;
         public string Start;
         public string End;
+        public double LedolgozottIdo;
 
         public Munkaido(Munkavallalo munkavallalo, DateTime date, string start, string end)
         {
@@ -15,11 +16,21 @@ namespace munkaido_nyilvantartas
             Date = date;
             Start = start;
             End = end;
+            
+            string[] kezdoido = start.Split(':');
+            string[] vegeido = end.Split(':');
+            
+            int start_ora = Convert.ToInt32(kezdoido[0]);
+            int end_ora = Convert.ToInt32(vegeido[0]);
+            int start_perc = Convert.ToInt32(kezdoido[1]);
+            int end_perc = Convert.ToInt32(vegeido[1]);
+            
+            double ido = ( (end_ora-start_ora) * 60 + (end_perc-start_perc) ) / 60;
+            
+            LedolgozottIdo = Math.Round(ido);
 
-            /*double ido = (((Convert.ToInt32(start.Split(':')[0]) - Convert.ToInt32(end.Split(':')[0])) * 60)
-                    + (Convert.ToInt32(start.Split(':')[1]) - Convert.ToInt32(end.Split(':')[1]))) /60;
-            WorkTime = Math.Round(ido);*/
         }
+        
     }
 }
     
