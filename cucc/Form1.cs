@@ -28,7 +28,7 @@ namespace munkaido_nyilvantartas
             ElolegekOlvasasa();
             ComboBoxFeltoltes();
             UpdateMunkaVallaloGrid();
-
+            stat_dtp.CustomFormat = "yyyy.MM";
 
         }
 

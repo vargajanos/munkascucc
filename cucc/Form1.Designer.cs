@@ -88,6 +88,17 @@ namespace munkaido_nyilvantartas
             this.eloleg_felveszBTN = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.ElolegComboBox = new System.Windows.Forms.ComboBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.stat_dtp = new System.Windows.Forms.DateTimePicker();
+            this.year_beixelos = new System.Windows.Forms.CheckBox();
+            this.stat_grid = new System.Windows.Forms.DataGridView();
+            this.fing_btn = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kifizetendo_lbl = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -100,6 +111,8 @@ namespace munkaido_nyilvantartas
             ((System.ComponentModel.ISupportInitialize)(this.elolegDataGrid)).BeginInit();
             this.elolegGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elolegNumericCucc)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -107,6 +120,7 @@ namespace munkaido_nyilvantartas
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(12, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -719,6 +733,111 @@ namespace munkaido_nyilvantartas
             this.ElolegComboBox.Size = new System.Drawing.Size(148, 23);
             this.ElolegComboBox.TabIndex = 2;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.kifizetendo_lbl);
+            this.tabPage4.Controls.Add(this.fing_btn);
+            this.tabPage4.Controls.Add(this.stat_grid);
+            this.tabPage4.Controls.Add(this.year_beixelos);
+            this.tabPage4.Controls.Add(this.stat_dtp);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1184, 715);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "Statisztika";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // stat_dtp
+            // 
+            this.stat_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stat_dtp.Location = new System.Drawing.Point(18, 18);
+            this.stat_dtp.Name = "stat_dtp";
+            this.stat_dtp.Size = new System.Drawing.Size(154, 20);
+            this.stat_dtp.TabIndex = 0;
+            // 
+            // year_beixelos
+            // 
+            this.year_beixelos.AutoSize = true;
+            this.year_beixelos.Location = new System.Drawing.Point(187, 21);
+            this.year_beixelos.Name = "year_beixelos";
+            this.year_beixelos.Size = new System.Drawing.Size(39, 17);
+            this.year_beixelos.TabIndex = 1;
+            this.year_beixelos.Text = "Év";
+            this.year_beixelos.UseVisualStyleBackColor = true;
+            // 
+            // stat_grid
+            // 
+            this.stat_grid.AllowUserToAddRows = false;
+            this.stat_grid.AllowUserToDeleteRows = false;
+            this.stat_grid.AllowUserToResizeColumns = false;
+            this.stat_grid.AllowUserToResizeRows = false;
+            this.stat_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.stat_grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.Column6,
+            this.Column7});
+            this.stat_grid.Location = new System.Drawing.Point(18, 83);
+            this.stat_grid.MultiSelect = false;
+            this.stat_grid.Name = "stat_grid";
+            this.stat_grid.ReadOnly = true;
+            this.stat_grid.RowHeadersVisible = false;
+            this.stat_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.stat_grid.Size = new System.Drawing.Size(952, 325);
+            this.stat_grid.TabIndex = 20;
+            // 
+            // fing_btn
+            // 
+            this.fing_btn.Location = new System.Drawing.Point(18, 44);
+            this.fing_btn.Name = "fing_btn";
+            this.fing_btn.Size = new System.Drawing.Size(75, 23);
+            this.fing_btn.TabIndex = 21;
+            this.fing_btn.Text = "Keresés";
+            this.fing_btn.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Név";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Munka óra";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Fizetés";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 150;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Felvett előleg";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Kifizetendő";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // kifizetendo_lbl
+            // 
+            this.kifizetendo_lbl.AutoSize = true;
+            this.kifizetendo_lbl.Location = new System.Drawing.Point(15, 411);
+            this.kifizetendo_lbl.Name = "kifizetendo_lbl";
+            this.kifizetendo_lbl.Size = new System.Drawing.Size(129, 13);
+            this.kifizetendo_lbl.TabIndex = 22;
+            this.kifizetendo_lbl.Text = "Össz fizetés: 0000000000";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,7 +845,7 @@ namespace munkaido_nyilvantartas
             this.ClientSize = new System.Drawing.Size(1236, 652);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Munkaidő nyilvántartás";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -742,6 +861,9 @@ namespace munkaido_nyilvantartas
             this.elolegGroupBox.ResumeLayout(false);
             this.elolegGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elolegNumericCucc)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -807,6 +929,17 @@ namespace munkaido_nyilvantartas
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DateTimePicker stat_dtp;
+        private System.Windows.Forms.Button fing_btn;
+        private System.Windows.Forms.DataGridView stat_grid;
+        private System.Windows.Forms.CheckBox year_beixelos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Label kifizetendo_lbl;
     }
 }
 
