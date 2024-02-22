@@ -13,6 +13,7 @@ namespace munkaido_nyilvantartas
         static List<Munkavallalo> munkavallalok = new List<Munkavallalo>();
         static List<Munkaido> munkaidok = new List<Munkaido>();
         static List<Eloleg> elolegek = new List<Eloleg>();
+        static List<Statisthick> statisthickCock = new List<Statisthick>();
 
 
 
@@ -374,7 +375,6 @@ namespace munkaido_nyilvantartas
             munkaido_datagrid.ClearSelection();
             DolgokUritese();
             isLoaded = true;
-            MessageBox.Show(munkaidok[0].LedolgozottIdo.ToString());
         }
 
         private void munkavalalloGrid_KeyDown(object sender, KeyEventArgs e)
