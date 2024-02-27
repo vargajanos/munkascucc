@@ -14,6 +14,7 @@ namespace munkaido_nyilvantartas
         static List<Munkaido> munkaidok = new List<Munkaido>();
         static List<Eloleg> elolegek = new List<Eloleg>();
         static List<Statisthick> statisthickCock = new List<Statisthick>();
+        static List<Statisthick> filter_list = new List<Statisthick>();
 
 
 
@@ -29,8 +30,14 @@ namespace munkaido_nyilvantartas
             ElolegekOlvasasa();
             ComboBoxFeltoltes();
             UpdateMunkaVallaloGrid();
+            StatisthickListaFeltoltes();
             stat_dtp.CustomFormat = "yyyy.MM";
+            stat_dtp.ShowUpDown = true;
 
+
+            stat_dtp.Value = DateTime.Now;
+            elolegDateTimePicker.Value = DateTime.Now;
+            dateDTP.Value = DateTime.Now;
         }
 
         private void ElolegekOlvasasa()
@@ -125,8 +132,11 @@ namespace munkaido_nyilvantartas
             munkaido_datagrid.ClearSelection();
 
             elolegDataGrid.ClearSelection();
+            stat_grid.ClearSelection();
 
-
+            stat_dtp.Value = DateTime.Now;
+            elolegDateTimePicker.Value = DateTime.Now;
+            dateDTP.Value = DateTime.Now;
 
             munkavallalo_felveszBTN.Enabled = true;
             munkavallalo_modositBTN.Enabled = false;
@@ -140,10 +150,13 @@ namespace munkaido_nyilvantartas
             eloleg_modositBTN.Enabled = false;
             eloleg_torolBTN.Enabled = false;
 
+            nameCBOX.SelectedItem = null;
+            startTBOX.Text = "";
+            endTBOX.Text = "";
 
             textBox1.Text = "";
             textBox2.Text = "";
-            comboBox1.Text = "";
+            comboBox1.SelectedItem = null;
             numericUpDown1.Value = 0;
             textBox4.Text = "";
             textBox5.Text = "";
@@ -569,40 +582,102 @@ namespace munkaido_nyilvantartas
 
         private void fing_btn_Click(object sender, EventArgs e)
         {
+            filter_list.Clear();
             StatisthickListaFeltoltes();
+            if (year_beixelos.Checked)
+            {
+                FilterListaFeltoltesEv();
+            }
+            else
+            {
+                FilterListaFeltoltesHonap();
+            }
 
             UpdateStatisthickGrid();
         }
 
-        private void StatisthickListaFeltoltes()
+        private void FilterListaFeltoltesEv()
         {
-            
-            for (int i = 0; i < munkavallalok.Count; i++)
+            DateTime filter_datum = stat_dtp.Value;
+            int fizetendo = 0;
+            for (int i = 0; i < statisthickCock.Count; i++)
             {
-
+                if (statisthickCock[i].Datum.Year == filter_datum.Year)
+                {
+                    filter_list.Add(statisthickCock[i]);
+                }
             }
-            for (int i = 0; i < munkaidok.Count; i++)
+            for (int i = 0; i < elolegek.Count; i++)
             {
+                Statisthick filterben = filter_list.Find(item => item.Nev.Nev.Equals(elolegek[i].Alkalmazott.Nev));
+                if (filterben != null && filterben.Datum.Year == filter_datum.Year)
+                {
+                    filterben.Eloleg = elolegek[i].Osszeg;
+                    filterben.Fizetendo = filterben.Fizetendo - elolegek[i].Osszeg;
+                }
+            }
+            for (int i = 0; i < filter_list.Count; i++)
+            {
+                fizetendo += filter_list[i].Fizetendo;
+            }
+            kifizetendo_lbl.Text = "Össz fizetés:" + fizetendo.ToString();
+        }
 
+        private void FilterListaFeltoltesHonap()
+        {
+            DateTime filter_datum = stat_dtp.Value;
+            int fizetendo = 0;
+            for (int i = 0; i < statisthickCock.Count; i++)
+            {
+                if (statisthickCock[i].Datum.Month == filter_datum.Month && statisthickCock[i].Datum.Year == filter_datum.Year)
+                {
+                    filter_list.Add(statisthickCock[i]);
+                }
             }
             for (int i = 0; i < elolegek.Count; i++)
             {
 
+                Statisthick filterben = filter_list.Find(item => item.Nev.Nev.Equals(elolegek[i].Alkalmazott.Nev));
+                
+                if (filterben != null && filterben.Datum.Month == filter_datum.Month )
+                {
+                    filterben.Eloleg = elolegek[i].Osszeg;
+                    filterben.Fizetendo = filterben.Fizetendo - elolegek[i].Osszeg;
+                }
+
+                
             }
 
+            for (int i = 0; i < filter_list.Count; i++)
+            {
+                fizetendo += filter_list[i].Fizetendo;
+            }
+            kifizetendo_lbl.Text = "Össz fizetés:" + fizetendo.ToString();
 
+        }
 
+        
+
+        private void StatisthickListaFeltoltes()
+        {
+            statisthickCock.Clear();
+            for (int i = 0; i < munkaidok.Count; i++)
+            {
+                statisthickCock.Add(new Statisthick(munkaidok[i]));
+            }
         }
 
         private void UpdateStatisthickGrid()
         {
             stat_grid.Rows.Clear();
-            elolegek.ForEach(item =>
+            filter_list.ForEach(item =>
             {
                 stat_grid.Rows.Add();
-                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[0].Value = item.Alkalmazott.Nev;
-                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[1].Value = item.Datum.ToShortDateString();
-                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[2].Value = item.Osszeg.ToString();
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[0].Value = item.Nev.Nev;
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[1].Value = item.Munkaora;
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[2].Value = item.Ossz_fizu.ToString();
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[3].Value = item.Eloleg.ToString();
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[4].Value = item.Fizetendo.ToString();
 
             });
 
@@ -615,6 +690,18 @@ namespace munkaido_nyilvantartas
 
 
             isLoaded = true;
+        }
+
+        private void year_beixelos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (year_beixelos.Checked)
+            {
+                stat_dtp.CustomFormat = "yyyy";
+            }
+            else
+            {
+                stat_dtp.CustomFormat = "yyyy.MM";                
+            }
         }
     }
 }

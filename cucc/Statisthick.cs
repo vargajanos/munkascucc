@@ -10,18 +10,21 @@ namespace cucc
     class Statisthick
     {
         public Munkavallalo Nev;
-        public double Munkaido;
+
+        public double Munkaora;
         public int Ossz_fizu;
         public int Eloleg;
         public int Fizetendo;
+        public DateTime Datum;
 
-        public Statisthick(Munkavallalo nev, double ora, int eloleg)
+        public Statisthick(Munkaido alkmozat)
         {
-            Nev = nev;
-            Munkaido = ora;
-            Ossz_fizu = Convert.ToInt32(nev.Oraber * ora);
-            Eloleg = eloleg;
+            Nev = alkmozat.Alkalmazott;
+            Munkaora = alkmozat.LedolgozottIdo;
+            Ossz_fizu = Convert.ToInt32(alkmozat.Alkalmazott.Oraber * alkmozat.LedolgozottIdo);
+            Eloleg = 0;
             Fizetendo = Ossz_fizu - Eloleg;
+            Datum = alkmozat.Date;
         }
     }
 }

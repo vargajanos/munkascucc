@@ -752,9 +752,9 @@ namespace munkaido_nyilvantartas
             this.kifizetendo_lbl.AutoSize = true;
             this.kifizetendo_lbl.Location = new System.Drawing.Point(15, 411);
             this.kifizetendo_lbl.Name = "kifizetendo_lbl";
-            this.kifizetendo_lbl.Size = new System.Drawing.Size(129, 13);
+            this.kifizetendo_lbl.Size = new System.Drawing.Size(69, 13);
             this.kifizetendo_lbl.TabIndex = 22;
-            this.kifizetendo_lbl.Text = "Össz fizetés: 0000000000";
+            this.kifizetendo_lbl.Text = "Össz fizetés: ";
             // 
             // fing_btn
             // 
@@ -787,6 +787,7 @@ namespace munkaido_nyilvantartas
             this.stat_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.stat_grid.Size = new System.Drawing.Size(952, 325);
             this.stat_grid.TabIndex = 20;
+            this.stat_grid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -830,6 +831,7 @@ namespace munkaido_nyilvantartas
             this.year_beixelos.TabIndex = 1;
             this.year_beixelos.Text = "Év";
             this.year_beixelos.UseVisualStyleBackColor = true;
+            this.year_beixelos.CheckedChanged += new System.EventHandler(this.year_beixelos_CheckedChanged);
             // 
             // stat_dtp
             // 
