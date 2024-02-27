@@ -450,10 +450,16 @@ namespace munkaido_nyilvantartas
                 munkaidok[index].Date = dateDTP.Value;
                 munkaidok[index].Start = startTBOX.Text;
                 munkaidok[index].End = endTBOX.Text;
+                munkaidok[index].LedolgozottIdo = munkaidok[index].LedolgozottIdoSzamolas(startTBOX.Text, endTBOX.Text);
+
+                stat_grid.Rows.Clear();
 
 
                 isLoaded = false;
                 isChanged = true;
+
+
+                
 
                 MunkaidoGridUpdate();
                 MessageBox.Show("Adat módosítva");
