@@ -92,13 +92,15 @@ namespace munkaido_nyilvantartas
             this.kifizetendo_lbl = new System.Windows.Forms.Label();
             this.fing_btn = new System.Windows.Forms.Button();
             this.stat_grid = new System.Windows.Forms.DataGridView();
+            this.year_beixelos = new System.Windows.Forms.CheckBox();
+            this.stat_dtp = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.year_beixelos = new System.Windows.Forms.CheckBox();
-            this.stat_dtp = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -113,10 +115,14 @@ namespace munkaido_nyilvantartas
             ((System.ComponentModel.ISupportInitialize)(this.elolegNumericCucc)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -124,7 +130,7 @@ namespace munkaido_nyilvantartas
             this.tabControl1.Location = new System.Drawing.Point(12, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1192, 741);
+            this.tabControl1.Size = new System.Drawing.Size(1334, 319);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -134,7 +140,7 @@ namespace munkaido_nyilvantartas
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1184, 715);
+            this.tabPage1.Size = new System.Drawing.Size(1326, 293);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Munkaválallók";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -157,9 +163,9 @@ namespace munkaido_nyilvantartas
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Location = new System.Drawing.Point(15, 6);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(466, 328);
+            this.groupBox1.Size = new System.Drawing.Size(326, 277);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Munkaválallok";
@@ -167,29 +173,29 @@ namespace munkaido_nyilvantartas
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(13, 293);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Location = new System.Drawing.Point(2, 208);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(255, 23);
+            this.label7.Size = new System.Drawing.Size(238, 20);
             this.label7.TabIndex = 17;
             this.label7.Text = "A * os mezőket kötelező kitölteni";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(214, 35);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(220, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 23);
+            this.label1.Size = new System.Drawing.Size(46, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Név *";
             // 
             // munkavallalo_modositBTN
             // 
-            this.munkavallalo_modositBTN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.munkavallalo_modositBTN.Location = new System.Drawing.Point(334, 109);
+            this.munkavallalo_modositBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.munkavallalo_modositBTN.Location = new System.Drawing.Point(87, 231);
             this.munkavallalo_modositBTN.Name = "munkavallalo_modositBTN";
-            this.munkavallalo_modositBTN.Size = new System.Drawing.Size(80, 51);
+            this.munkavallalo_modositBTN.Size = new System.Drawing.Size(75, 34);
             this.munkavallalo_modositBTN.TabIndex = 15;
             this.munkavallalo_modositBTN.Text = "Módosít";
             this.munkavallalo_modositBTN.UseVisualStyleBackColor = true;
@@ -198,37 +204,37 @@ namespace munkaido_nyilvantartas
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(204, 121);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(220, 85);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.Size = new System.Drawing.Size(86, 20);
             this.label3.TabIndex = 8;
             this.label3.Text = "Beosztás *";
             // 
             // textBox4
             // 
-            this.textBox4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox4.Location = new System.Drawing.Point(17, 209);
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox4.Location = new System.Drawing.Point(6, 147);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 23);
+            this.textBox4.Size = new System.Drawing.Size(208, 26);
             this.textBox4.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(204, 252);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.Location = new System.Drawing.Point(217, 182);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 23);
+            this.label6.Size = new System.Drawing.Size(100, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Telefonszám";
             // 
             // munkavallalo_torolBTN
             // 
-            this.munkavallalo_torolBTN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.munkavallalo_torolBTN.Location = new System.Drawing.Point(334, 196);
+            this.munkavallalo_torolBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.munkavallalo_torolBTN.Location = new System.Drawing.Point(168, 231);
             this.munkavallalo_torolBTN.Name = "munkavallalo_torolBTN";
-            this.munkavallalo_torolBTN.Size = new System.Drawing.Size(80, 51);
+            this.munkavallalo_torolBTN.Size = new System.Drawing.Size(75, 34);
             this.munkavallalo_torolBTN.TabIndex = 16;
             this.munkavallalo_torolBTN.Text = "Töröl";
             this.munkavallalo_torolBTN.UseVisualStyleBackColor = true;
@@ -236,57 +242,57 @@ namespace munkaido_nyilvantartas
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numericUpDown1.Location = new System.Drawing.Point(17, 165);
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.numericUpDown1.Location = new System.Drawing.Point(6, 115);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             2000000000,
             0,
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(148, 23);
+            this.numericUpDown1.Size = new System.Drawing.Size(208, 26);
             this.numericUpDown1.TabIndex = 13;
             // 
             // textBox5
             // 
-            this.textBox5.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox5.Location = new System.Drawing.Point(17, 253);
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox5.Location = new System.Drawing.Point(6, 179);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 23);
+            this.textBox5.Size = new System.Drawing.Size(208, 26);
             this.textBox5.TabIndex = 11;
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(17, 38);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox1.Location = new System.Drawing.Point(6, 19);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 23);
+            this.textBox1.Size = new System.Drawing.Size(208, 26);
             this.textBox1.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(204, 75);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(220, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 23);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "Lakcím *";
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox2.Location = new System.Drawing.Point(17, 76);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox2.Location = new System.Drawing.Point(6, 51);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 23);
+            this.textBox2.Size = new System.Drawing.Size(208, 26);
             this.textBox2.TabIndex = 3;
             // 
             // munkavallalo_felveszBTN
             // 
-            this.munkavallalo_felveszBTN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.munkavallalo_felveszBTN.Location = new System.Drawing.Point(334, 29);
+            this.munkavallalo_felveszBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.munkavallalo_felveszBTN.Location = new System.Drawing.Point(6, 231);
             this.munkavallalo_felveszBTN.Name = "munkavallalo_felveszBTN";
-            this.munkavallalo_felveszBTN.Size = new System.Drawing.Size(80, 51);
+            this.munkavallalo_felveszBTN.Size = new System.Drawing.Size(75, 34);
             this.munkavallalo_felveszBTN.TabIndex = 14;
             this.munkavallalo_felveszBTN.Text = "Felvesz";
             this.munkavallalo_felveszBTN.UseVisualStyleBackColor = true;
@@ -295,30 +301,30 @@ namespace munkaido_nyilvantartas
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(204, 208);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(220, 150);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 23);
+            this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Email";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(204, 161);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(220, 117);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 23);
+            this.label4.Size = new System.Drawing.Size(68, 20);
             this.label4.TabIndex = 9;
             this.label4.Text = "Órabér *";
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 122);
+            this.comboBox1.Location = new System.Drawing.Point(6, 83);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(148, 23);
+            this.comboBox1.Size = new System.Drawing.Size(208, 26);
             this.comboBox1.TabIndex = 2;
             // 
             // munkavalalloGrid
@@ -327,6 +333,9 @@ namespace munkaido_nyilvantartas
             this.munkavalalloGrid.AllowUserToDeleteRows = false;
             this.munkavalalloGrid.AllowUserToResizeColumns = false;
             this.munkavalalloGrid.AllowUserToResizeRows = false;
+            this.munkavalalloGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.munkavalalloGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.munkavalalloGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nev,
@@ -335,13 +344,13 @@ namespace munkaido_nyilvantartas
             this.Column3,
             this.Column4,
             this.Column5});
-            this.munkavalalloGrid.Location = new System.Drawing.Point(3, 340);
+            this.munkavalalloGrid.Location = new System.Drawing.Point(347, 6);
             this.munkavalalloGrid.MultiSelect = false;
             this.munkavalalloGrid.Name = "munkavalalloGrid";
             this.munkavalalloGrid.ReadOnly = true;
             this.munkavalalloGrid.RowHeadersVisible = false;
             this.munkavalalloGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.munkavalalloGrid.Size = new System.Drawing.Size(1179, 372);
+            this.munkavalalloGrid.Size = new System.Drawing.Size(971, 277);
             this.munkavalalloGrid.TabIndex = 0;
             this.munkavalalloGrid.SelectionChanged += new System.EventHandler(this.munkavalalloGrid_SelectionChanged);
             this.munkavalalloGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
@@ -395,7 +404,7 @@ namespace munkaido_nyilvantartas
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1184, 715);
+            this.tabPage2.Size = new System.Drawing.Size(1326, 293);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Munkaidő";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -413,9 +422,9 @@ namespace munkaido_nyilvantartas
             this.groupBox2.Controls.Add(this.vege_label);
             this.groupBox2.Controls.Add(this.alkamlazottlabel);
             this.groupBox2.Controls.Add(this.munkanap_label);
-            this.groupBox2.Location = new System.Drawing.Point(6, 11);
+            this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(346, 181);
+            this.groupBox2.Size = new System.Drawing.Size(450, 195);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Munkaidő";
@@ -423,17 +432,19 @@ namespace munkaido_nyilvantartas
             // nameCBOX
             // 
             this.nameCBOX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.nameCBOX.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.nameCBOX.FormattingEnabled = true;
-            this.nameCBOX.Location = new System.Drawing.Point(24, 19);
+            this.nameCBOX.Location = new System.Drawing.Point(6, 19);
             this.nameCBOX.Name = "nameCBOX";
-            this.nameCBOX.Size = new System.Drawing.Size(209, 21);
+            this.nameCBOX.Size = new System.Drawing.Size(208, 26);
             this.nameCBOX.TabIndex = 14;
             // 
             // torol_munkaido_btn
             // 
-            this.torol_munkaido_btn.Location = new System.Drawing.Point(168, 146);
+            this.torol_munkaido_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.torol_munkaido_btn.Location = new System.Drawing.Point(168, 147);
             this.torol_munkaido_btn.Name = "torol_munkaido_btn";
-            this.torol_munkaido_btn.Size = new System.Drawing.Size(75, 23);
+            this.torol_munkaido_btn.Size = new System.Drawing.Size(75, 34);
             this.torol_munkaido_btn.TabIndex = 13;
             this.torol_munkaido_btn.Text = "Töröl";
             this.torol_munkaido_btn.UseVisualStyleBackColor = true;
@@ -441,9 +452,10 @@ namespace munkaido_nyilvantartas
             // 
             // modosit_munkaido_btn
             // 
-            this.modosit_munkaido_btn.Location = new System.Drawing.Point(87, 146);
+            this.modosit_munkaido_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.modosit_munkaido_btn.Location = new System.Drawing.Point(87, 147);
             this.modosit_munkaido_btn.Name = "modosit_munkaido_btn";
-            this.modosit_munkaido_btn.Size = new System.Drawing.Size(75, 23);
+            this.modosit_munkaido_btn.Size = new System.Drawing.Size(75, 34);
             this.modosit_munkaido_btn.TabIndex = 12;
             this.modosit_munkaido_btn.Text = "Módosít";
             this.modosit_munkaido_btn.UseVisualStyleBackColor = true;
@@ -451,9 +463,10 @@ namespace munkaido_nyilvantartas
             // 
             // felvesz_munkaido_btn
             // 
-            this.felvesz_munkaido_btn.Location = new System.Drawing.Point(7, 146);
+            this.felvesz_munkaido_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.felvesz_munkaido_btn.Location = new System.Drawing.Point(6, 147);
             this.felvesz_munkaido_btn.Name = "felvesz_munkaido_btn";
-            this.felvesz_munkaido_btn.Size = new System.Drawing.Size(75, 23);
+            this.felvesz_munkaido_btn.Size = new System.Drawing.Size(75, 34);
             this.felvesz_munkaido_btn.TabIndex = 11;
             this.felvesz_munkaido_btn.Text = "Felvesz";
             this.felvesz_munkaido_btn.UseVisualStyleBackColor = true;
@@ -461,60 +474,67 @@ namespace munkaido_nyilvantartas
             // 
             // endTBOX
             // 
-            this.endTBOX.Location = new System.Drawing.Point(25, 120);
+            this.endTBOX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.endTBOX.Location = new System.Drawing.Point(6, 115);
             this.endTBOX.Name = "endTBOX";
-            this.endTBOX.Size = new System.Drawing.Size(208, 20);
+            this.endTBOX.Size = new System.Drawing.Size(208, 26);
             this.endTBOX.TabIndex = 10;
             // 
             // startTBOX
             // 
-            this.startTBOX.Location = new System.Drawing.Point(25, 87);
+            this.startTBOX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.startTBOX.Location = new System.Drawing.Point(6, 83);
             this.startTBOX.Name = "startTBOX";
-            this.startTBOX.Size = new System.Drawing.Size(208, 20);
+            this.startTBOX.Size = new System.Drawing.Size(208, 26);
             this.startTBOX.TabIndex = 9;
             // 
             // kezdet_label
             // 
             this.kezdet_label.AutoSize = true;
-            this.kezdet_label.Location = new System.Drawing.Point(240, 90);
+            this.kezdet_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.kezdet_label.Location = new System.Drawing.Point(223, 86);
             this.kezdet_label.Name = "kezdet_label";
-            this.kezdet_label.Size = new System.Drawing.Size(95, 13);
+            this.kezdet_label.Size = new System.Drawing.Size(139, 20);
             this.kezdet_label.TabIndex = 5;
             this.kezdet_label.Text = "Munkaidő kezdete";
             // 
             // dateDTP
             // 
+            this.dateDTP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dateDTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateDTP.Location = new System.Drawing.Point(24, 51);
+            this.dateDTP.Location = new System.Drawing.Point(6, 51);
             this.dateDTP.Name = "dateDTP";
-            this.dateDTP.Size = new System.Drawing.Size(210, 20);
+            this.dateDTP.Size = new System.Drawing.Size(208, 26);
             this.dateDTP.TabIndex = 2;
             this.dateDTP.Value = new System.DateTime(2024, 2, 8, 0, 0, 0, 0);
             // 
             // vege_label
             // 
             this.vege_label.AutoSize = true;
-            this.vege_label.Location = new System.Drawing.Point(240, 123);
+            this.vege_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.vege_label.Location = new System.Drawing.Point(223, 118);
             this.vege_label.Name = "vege_label";
-            this.vege_label.Size = new System.Drawing.Size(81, 13);
+            this.vege_label.Size = new System.Drawing.Size(116, 20);
             this.vege_label.TabIndex = 6;
             this.vege_label.Text = "Munkaidő vége";
             // 
             // alkamlazottlabel
             // 
             this.alkamlazottlabel.AutoSize = true;
-            this.alkamlazottlabel.Location = new System.Drawing.Point(240, 23);
+            this.alkamlazottlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.alkamlazottlabel.Location = new System.Drawing.Point(222, 21);
             this.alkamlazottlabel.Name = "alkamlazottlabel";
-            this.alkamlazottlabel.Size = new System.Drawing.Size(88, 13);
+            this.alkamlazottlabel.Size = new System.Drawing.Size(130, 20);
             this.alkamlazottlabel.TabIndex = 3;
             this.alkamlazottlabel.Text = "Alkalmazott neve";
             // 
             // munkanap_label
             // 
             this.munkanap_label.AutoSize = true;
-            this.munkanap_label.Location = new System.Drawing.Point(240, 57);
+            this.munkanap_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.munkanap_label.Location = new System.Drawing.Point(223, 56);
             this.munkanap_label.Name = "munkanap_label";
-            this.munkanap_label.Size = new System.Drawing.Size(61, 13);
+            this.munkanap_label.Size = new System.Drawing.Size(88, 20);
             this.munkanap_label.TabIndex = 4;
             this.munkanap_label.Text = "Munka nap";
             // 
@@ -522,20 +542,23 @@ namespace munkaido_nyilvantartas
             // 
             this.munkaido_datagrid.AllowUserToAddRows = false;
             this.munkaido_datagrid.AllowUserToDeleteRows = false;
+            this.munkaido_datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.munkaido_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.munkaido_datagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.munkaido_datagrid.Location = new System.Drawing.Point(0, 198);
+            this.munkaido_datagrid.Location = new System.Drawing.Point(462, 11);
             this.munkaido_datagrid.MultiSelect = false;
             this.munkaido_datagrid.Name = "munkaido_datagrid";
             this.munkaido_datagrid.ReadOnly = true;
             this.munkaido_datagrid.RowHeadersVisible = false;
             this.munkaido_datagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.munkaido_datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.munkaido_datagrid.Size = new System.Drawing.Size(626, 248);
+            this.munkaido_datagrid.Size = new System.Drawing.Size(858, 276);
             this.munkaido_datagrid.TabIndex = 8;
             this.munkaido_datagrid.SelectionChanged += new System.EventHandler(this.munkaido_datagrid_SelectionChanged);
             this.munkaido_datagrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
@@ -572,7 +595,7 @@ namespace munkaido_nyilvantartas
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1184, 715);
+            this.tabPage3.Size = new System.Drawing.Size(1326, 293);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Előlegek";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -583,18 +606,21 @@ namespace munkaido_nyilvantartas
             this.elolegDataGrid.AllowUserToDeleteRows = false;
             this.elolegDataGrid.AllowUserToResizeColumns = false;
             this.elolegDataGrid.AllowUserToResizeRows = false;
+            this.elolegDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.elolegDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.elolegDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.elolegDataGrid.Location = new System.Drawing.Point(23, 284);
+            this.elolegDataGrid.Location = new System.Drawing.Point(467, 15);
             this.elolegDataGrid.MultiSelect = false;
             this.elolegDataGrid.Name = "elolegDataGrid";
             this.elolegDataGrid.ReadOnly = true;
             this.elolegDataGrid.RowHeadersVisible = false;
             this.elolegDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.elolegDataGrid.Size = new System.Drawing.Size(578, 325);
+            this.elolegDataGrid.Size = new System.Drawing.Size(853, 272);
             this.elolegDataGrid.TabIndex = 19;
             this.elolegDataGrid.SelectionChanged += new System.EventHandler(this.elolegDataGrid_SelectionChanged);
             this.elolegDataGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
@@ -631,38 +657,39 @@ namespace munkaido_nyilvantartas
             this.elolegGroupBox.Controls.Add(this.eloleg_felveszBTN);
             this.elolegGroupBox.Controls.Add(this.label13);
             this.elolegGroupBox.Controls.Add(this.ElolegComboBox);
-            this.elolegGroupBox.Location = new System.Drawing.Point(23, 15);
+            this.elolegGroupBox.Location = new System.Drawing.Point(6, 6);
             this.elolegGroupBox.Name = "elolegGroupBox";
-            this.elolegGroupBox.Size = new System.Drawing.Size(438, 263);
+            this.elolegGroupBox.Size = new System.Drawing.Size(455, 166);
             this.elolegGroupBox.TabIndex = 18;
             this.elolegGroupBox.TabStop = false;
             this.elolegGroupBox.Text = "Előleg";
             // 
             // elolegDateTimePicker
             // 
+            this.elolegDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.elolegDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.elolegDateTimePicker.Location = new System.Drawing.Point(17, 87);
+            this.elolegDateTimePicker.Location = new System.Drawing.Point(6, 53);
             this.elolegDateTimePicker.Name = "elolegDateTimePicker";
-            this.elolegDateTimePicker.Size = new System.Drawing.Size(148, 20);
+            this.elolegDateTimePicker.Size = new System.Drawing.Size(208, 26);
             this.elolegDateTimePicker.TabIndex = 18;
             this.elolegDateTimePicker.Value = new System.DateTime(2024, 2, 8, 0, 0, 0, 0);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(204, 35);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.Location = new System.Drawing.Point(220, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 23);
+            this.label9.Size = new System.Drawing.Size(92, 20);
             this.label9.TabIndex = 6;
             this.label9.Text = "Alkalmazott";
             // 
             // eloleg_modositBTN
             // 
-            this.eloleg_modositBTN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eloleg_modositBTN.Location = new System.Drawing.Point(334, 87);
+            this.eloleg_modositBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.eloleg_modositBTN.Location = new System.Drawing.Point(87, 123);
             this.eloleg_modositBTN.Name = "eloleg_modositBTN";
-            this.eloleg_modositBTN.Size = new System.Drawing.Size(80, 51);
+            this.eloleg_modositBTN.Size = new System.Drawing.Size(75, 34);
             this.eloleg_modositBTN.TabIndex = 15;
             this.eloleg_modositBTN.Text = "Módosít";
             this.eloleg_modositBTN.UseVisualStyleBackColor = true;
@@ -671,19 +698,19 @@ namespace munkaido_nyilvantartas
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(204, 137);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label11.Location = new System.Drawing.Point(220, 93);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 23);
+            this.label11.Size = new System.Drawing.Size(63, 20);
             this.label11.TabIndex = 12;
             this.label11.Text = "Összeg";
             // 
             // eloleg_torolBTN
             // 
-            this.eloleg_torolBTN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eloleg_torolBTN.Location = new System.Drawing.Point(334, 158);
+            this.eloleg_torolBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.eloleg_torolBTN.Location = new System.Drawing.Point(168, 123);
             this.eloleg_torolBTN.Name = "eloleg_torolBTN";
-            this.eloleg_torolBTN.Size = new System.Drawing.Size(80, 51);
+            this.eloleg_torolBTN.Size = new System.Drawing.Size(75, 34);
             this.eloleg_torolBTN.TabIndex = 16;
             this.eloleg_torolBTN.Text = "Töröl";
             this.eloleg_torolBTN.UseVisualStyleBackColor = true;
@@ -691,23 +718,23 @@ namespace munkaido_nyilvantartas
             // 
             // elolegNumericCucc
             // 
-            this.elolegNumericCucc.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.elolegNumericCucc.Location = new System.Drawing.Point(17, 137);
+            this.elolegNumericCucc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.elolegNumericCucc.Location = new System.Drawing.Point(6, 91);
             this.elolegNumericCucc.Maximum = new decimal(new int[] {
             2000000000,
             0,
             0,
             0});
             this.elolegNumericCucc.Name = "elolegNumericCucc";
-            this.elolegNumericCucc.Size = new System.Drawing.Size(148, 23);
+            this.elolegNumericCucc.Size = new System.Drawing.Size(208, 26);
             this.elolegNumericCucc.TabIndex = 13;
             // 
             // eloleg_felveszBTN
             // 
-            this.eloleg_felveszBTN.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.eloleg_felveszBTN.Location = new System.Drawing.Point(334, 23);
+            this.eloleg_felveszBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.eloleg_felveszBTN.Location = new System.Drawing.Point(6, 123);
             this.eloleg_felveszBTN.Name = "eloleg_felveszBTN";
-            this.eloleg_felveszBTN.Size = new System.Drawing.Size(80, 51);
+            this.eloleg_felveszBTN.Size = new System.Drawing.Size(75, 34);
             this.eloleg_felveszBTN.TabIndex = 14;
             this.eloleg_felveszBTN.Text = "Felvesz";
             this.eloleg_felveszBTN.UseVisualStyleBackColor = true;
@@ -716,33 +743,30 @@ namespace munkaido_nyilvantartas
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.Location = new System.Drawing.Point(204, 86);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label13.Location = new System.Drawing.Point(220, 58);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 23);
+            this.label13.Size = new System.Drawing.Size(57, 20);
             this.label13.TabIndex = 10;
             this.label13.Text = "Dátum";
             // 
             // ElolegComboBox
             // 
             this.ElolegComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ElolegComboBox.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ElolegComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.ElolegComboBox.FormattingEnabled = true;
-            this.ElolegComboBox.Location = new System.Drawing.Point(17, 38);
+            this.ElolegComboBox.Location = new System.Drawing.Point(6, 19);
             this.ElolegComboBox.Name = "ElolegComboBox";
-            this.ElolegComboBox.Size = new System.Drawing.Size(148, 23);
+            this.ElolegComboBox.Size = new System.Drawing.Size(208, 26);
             this.ElolegComboBox.TabIndex = 2;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.kifizetendo_lbl);
-            this.tabPage4.Controls.Add(this.fing_btn);
+            this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Controls.Add(this.stat_grid);
-            this.tabPage4.Controls.Add(this.year_beixelos);
-            this.tabPage4.Controls.Add(this.stat_dtp);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1184, 715);
+            this.tabPage4.Size = new System.Drawing.Size(1326, 293);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Statisztika";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -750,17 +774,19 @@ namespace munkaido_nyilvantartas
             // kifizetendo_lbl
             // 
             this.kifizetendo_lbl.AutoSize = true;
-            this.kifizetendo_lbl.Location = new System.Drawing.Point(15, 411);
+            this.kifizetendo_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.kifizetendo_lbl.Location = new System.Drawing.Point(6, 48);
             this.kifizetendo_lbl.Name = "kifizetendo_lbl";
-            this.kifizetendo_lbl.Size = new System.Drawing.Size(69, 13);
+            this.kifizetendo_lbl.Size = new System.Drawing.Size(104, 20);
             this.kifizetendo_lbl.TabIndex = 22;
             this.kifizetendo_lbl.Text = "Össz fizetés: ";
             // 
             // fing_btn
             // 
-            this.fing_btn.Location = new System.Drawing.Point(18, 44);
+            this.fing_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.fing_btn.Location = new System.Drawing.Point(218, 17);
             this.fing_btn.Name = "fing_btn";
-            this.fing_btn.Size = new System.Drawing.Size(75, 23);
+            this.fing_btn.Size = new System.Drawing.Size(75, 34);
             this.fing_btn.TabIndex = 21;
             this.fing_btn.Text = "Keresés";
             this.fing_btn.UseVisualStyleBackColor = true;
@@ -772,22 +798,47 @@ namespace munkaido_nyilvantartas
             this.stat_grid.AllowUserToDeleteRows = false;
             this.stat_grid.AllowUserToResizeColumns = false;
             this.stat_grid.AllowUserToResizeRows = false;
+            this.stat_grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.stat_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stat_grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
+            this.Column8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.Column6,
             this.Column7});
-            this.stat_grid.Location = new System.Drawing.Point(18, 83);
+            this.stat_grid.Location = new System.Drawing.Point(325, 3);
             this.stat_grid.MultiSelect = false;
             this.stat_grid.Name = "stat_grid";
             this.stat_grid.ReadOnly = true;
             this.stat_grid.RowHeadersVisible = false;
             this.stat_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stat_grid.Size = new System.Drawing.Size(952, 325);
+            this.stat_grid.Size = new System.Drawing.Size(997, 287);
             this.stat_grid.TabIndex = 20;
             this.stat_grid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
+            // 
+            // year_beixelos
+            // 
+            this.year_beixelos.AutoSize = true;
+            this.year_beixelos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.year_beixelos.Location = new System.Drawing.Point(166, 23);
+            this.year_beixelos.Name = "year_beixelos";
+            this.year_beixelos.Size = new System.Drawing.Size(46, 24);
+            this.year_beixelos.TabIndex = 1;
+            this.year_beixelos.Text = "Év";
+            this.year_beixelos.UseVisualStyleBackColor = true;
+            this.year_beixelos.CheckedChanged += new System.EventHandler(this.year_beixelos_CheckedChanged);
+            // 
+            // stat_dtp
+            // 
+            this.stat_dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.stat_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stat_dtp.Location = new System.Drawing.Point(6, 19);
+            this.stat_dtp.Name = "stat_dtp";
+            this.stat_dtp.Size = new System.Drawing.Size(154, 26);
+            this.stat_dtp.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -795,6 +846,12 @@ namespace munkaido_nyilvantartas
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 200;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Munka napja";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -822,30 +879,24 @@ namespace munkaido_nyilvantartas
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // year_beixelos
+            // groupBox3
             // 
-            this.year_beixelos.AutoSize = true;
-            this.year_beixelos.Location = new System.Drawing.Point(187, 21);
-            this.year_beixelos.Name = "year_beixelos";
-            this.year_beixelos.Size = new System.Drawing.Size(39, 17);
-            this.year_beixelos.TabIndex = 1;
-            this.year_beixelos.Text = "Év";
-            this.year_beixelos.UseVisualStyleBackColor = true;
-            this.year_beixelos.CheckedChanged += new System.EventHandler(this.year_beixelos_CheckedChanged);
-            // 
-            // stat_dtp
-            // 
-            this.stat_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stat_dtp.Location = new System.Drawing.Point(18, 18);
-            this.stat_dtp.Name = "stat_dtp";
-            this.stat_dtp.Size = new System.Drawing.Size(154, 20);
-            this.stat_dtp.TabIndex = 0;
+            this.groupBox3.Controls.Add(this.fing_btn);
+            this.groupBox3.Controls.Add(this.kifizetendo_lbl);
+            this.groupBox3.Controls.Add(this.stat_dtp);
+            this.groupBox3.Controls.Add(this.year_beixelos);
+            this.groupBox3.Location = new System.Drawing.Point(7, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(312, 73);
+            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Statisztika";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 652);
+            this.ClientSize = new System.Drawing.Size(1350, 326);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Munkaidő nyilvántartás";
@@ -865,8 +916,9 @@ namespace munkaido_nyilvantartas
             this.elolegGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elolegNumericCucc)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -937,12 +989,14 @@ namespace munkaido_nyilvantartas
         private System.Windows.Forms.Button fing_btn;
         private System.Windows.Forms.DataGridView stat_grid;
         private System.Windows.Forms.CheckBox year_beixelos;
+        private System.Windows.Forms.Label kifizetendo_lbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.Label kifizetendo_lbl;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

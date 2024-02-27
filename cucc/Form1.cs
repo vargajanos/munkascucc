@@ -16,8 +16,6 @@ namespace munkaido_nyilvantartas
         static List<Statisthick> statisthickCock = new List<Statisthick>();
         static List<Statisthick> filter_list = new List<Statisthick>();
 
-
-
         static bool isLoaded = false;
         static bool isChanged = false;
         static int selectedIndex = -1;
@@ -223,7 +221,6 @@ namespace munkaido_nyilvantartas
 
         }
 
-
         private void munkavallalo_modositBTN_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "" || textBox2.Text == "" || comboBox1.Text == "" || numericUpDown1.Value == 0)
@@ -299,7 +296,6 @@ namespace munkaido_nyilvantartas
             }
         }
 
-
         private void SaveToFile()
         {
             try
@@ -342,19 +338,12 @@ namespace munkaido_nyilvantartas
                         );
                 }
                 eloleg_file.Close();
-
-
-
             }
             catch (IOException ex)
             {
                 MessageBox.Show("Hiba a mentéskor!", ex.Message);
 
             }
-
-
-
-
         }
 
         private void felvesz_munkaido_btn_Click(object sender, EventArgs e)
@@ -418,7 +407,7 @@ namespace munkaido_nyilvantartas
                 if (index > -1)
                 {
 
-                    felvesz_munkaido_btn.Enabled = false;
+                    felvesz_munkaido_btn.Enabled = true;
                     modosit_munkaido_btn.Enabled = true;
                     torol_munkaido_btn.Enabled = true;
 
@@ -658,8 +647,6 @@ namespace munkaido_nyilvantartas
 
         }
 
-        
-
         private void StatisthickListaFeltoltes()
         {
             statisthickCock.Clear();
@@ -676,10 +663,11 @@ namespace munkaido_nyilvantartas
             {
                 stat_grid.Rows.Add();
                 stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[0].Value = item.Nev.Nev;
-                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[1].Value = item.Munkaora;
-                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[2].Value = item.Ossz_fizu.ToString();
-                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[3].Value = item.Eloleg.ToString();
-                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[4].Value = item.Fizetendo.ToString();
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[1].Value = item.Datum.ToShortDateString();
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[2].Value = item.Munkaora;
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[3].Value = item.Ossz_fizu.ToString();
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[4].Value = item.Eloleg.ToString();
+                stat_grid.Rows[stat_grid.Rows.Count - 1].Cells[5].Value = item.Fizetendo.ToString();
 
             });
 
