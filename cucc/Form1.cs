@@ -96,7 +96,7 @@ namespace munkaido_nyilvantartas
             }
             catch (IOException)
             {
-                MessageBox.Show("Baj van a Munkavállalók olvasásánál");
+                MessageBox.Show("Baj van a Munkaidők olvasásánál");
             }
 
 
@@ -128,6 +128,8 @@ namespace munkaido_nyilvantartas
 
         private void DolgokUritese()
         {
+            ComboBoxFeltoltes();
+
             munkavalalloGrid.ClearSelection();
             munkaido_datagrid.ClearSelection();
 
