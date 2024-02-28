@@ -49,12 +49,6 @@ namespace munkaido_nyilvantartas
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.munkavalalloGrid = new System.Windows.Forms.DataGridView();
-            this.nev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.nameCBOX = new System.Windows.Forms.ComboBox();
@@ -69,15 +63,8 @@ namespace munkaido_nyilvantartas
             this.alkamlazottlabel = new System.Windows.Forms.Label();
             this.munkanap_label = new System.Windows.Forms.Label();
             this.munkaido_datagrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.elolegDataGrid = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.elolegGroupBox = new System.Windows.Forms.GroupBox();
             this.elolegDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -89,18 +76,31 @@ namespace munkaido_nyilvantartas
             this.label13 = new System.Windows.Forms.Label();
             this.ElolegComboBox = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.kifizetendo_lbl = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.fing_btn = new System.Windows.Forms.Button();
-            this.stat_grid = new System.Windows.Forms.DataGridView();
-            this.year_beixelos = new System.Windows.Forms.CheckBox();
+            this.kifizetendo_lbl = new System.Windows.Forms.Label();
             this.stat_dtp = new System.Windows.Forms.DateTimePicker();
+            this.year_beixelos = new System.Windows.Forms.CheckBox();
+            this.stat_grid = new System.Windows.Forms.DataGridView();
+            this.nev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,8 +114,8 @@ namespace munkaido_nyilvantartas
             this.elolegGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elolegNumericCucc)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -336,6 +336,7 @@ namespace munkaido_nyilvantartas
             this.munkavalalloGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.munkavalalloGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.munkavalalloGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.munkavalalloGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nev,
@@ -354,48 +355,6 @@ namespace munkaido_nyilvantartas
             this.munkavalalloGrid.TabIndex = 0;
             this.munkavalalloGrid.SelectionChanged += new System.EventHandler(this.munkavalalloGrid_SelectionChanged);
             this.munkavalalloGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
-            // 
-            // nev
-            // 
-            this.nev.HeaderText = "Név";
-            this.nev.Name = "nev";
-            this.nev.ReadOnly = true;
-            this.nev.Width = 200;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Lakcím";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Beosztás";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Órabér";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Email";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Telefonszám";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 150;
             // 
             // tabPage2
             // 
@@ -542,9 +501,12 @@ namespace munkaido_nyilvantartas
             // 
             this.munkaido_datagrid.AllowUserToAddRows = false;
             this.munkaido_datagrid.AllowUserToDeleteRows = false;
+            this.munkaido_datagrid.AllowUserToResizeColumns = false;
+            this.munkaido_datagrid.AllowUserToResizeRows = false;
             this.munkaido_datagrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.munkaido_datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.munkaido_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.munkaido_datagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -562,31 +524,6 @@ namespace munkaido_nyilvantartas
             this.munkaido_datagrid.TabIndex = 8;
             this.munkaido_datagrid.SelectionChanged += new System.EventHandler(this.munkaido_datagrid_SelectionChanged);
             this.munkaido_datagrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Alkalmazott neve";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nap";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Kezdet";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Vége";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -609,6 +546,7 @@ namespace munkaido_nyilvantartas
             this.elolegDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.elolegDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.elolegDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.elolegDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -624,27 +562,6 @@ namespace munkaido_nyilvantartas
             this.elolegDataGrid.TabIndex = 19;
             this.elolegDataGrid.SelectionChanged += new System.EventHandler(this.elolegDataGrid_SelectionChanged);
             this.elolegDataGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Név";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Dátum";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Összeg";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 150;
             // 
             // elolegGroupBox
             // 
@@ -771,15 +688,18 @@ namespace munkaido_nyilvantartas
             this.tabPage4.Text = "Statisztika";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // kifizetendo_lbl
+            // groupBox3
             // 
-            this.kifizetendo_lbl.AutoSize = true;
-            this.kifizetendo_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.kifizetendo_lbl.Location = new System.Drawing.Point(6, 48);
-            this.kifizetendo_lbl.Name = "kifizetendo_lbl";
-            this.kifizetendo_lbl.Size = new System.Drawing.Size(104, 20);
-            this.kifizetendo_lbl.TabIndex = 22;
-            this.kifizetendo_lbl.Text = "Össz fizetés: ";
+            this.groupBox3.Controls.Add(this.fing_btn);
+            this.groupBox3.Controls.Add(this.kifizetendo_lbl);
+            this.groupBox3.Controls.Add(this.stat_dtp);
+            this.groupBox3.Controls.Add(this.year_beixelos);
+            this.groupBox3.Location = new System.Drawing.Point(7, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(312, 73);
+            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Statisztika";
             // 
             // fing_btn
             // 
@@ -792,6 +712,37 @@ namespace munkaido_nyilvantartas
             this.fing_btn.UseVisualStyleBackColor = true;
             this.fing_btn.Click += new System.EventHandler(this.fing_btn_Click);
             // 
+            // kifizetendo_lbl
+            // 
+            this.kifizetendo_lbl.AutoSize = true;
+            this.kifizetendo_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.kifizetendo_lbl.Location = new System.Drawing.Point(6, 48);
+            this.kifizetendo_lbl.Name = "kifizetendo_lbl";
+            this.kifizetendo_lbl.Size = new System.Drawing.Size(104, 20);
+            this.kifizetendo_lbl.TabIndex = 22;
+            this.kifizetendo_lbl.Text = "Össz fizetés: ";
+            // 
+            // stat_dtp
+            // 
+            this.stat_dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.stat_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.stat_dtp.Location = new System.Drawing.Point(6, 19);
+            this.stat_dtp.Name = "stat_dtp";
+            this.stat_dtp.Size = new System.Drawing.Size(154, 26);
+            this.stat_dtp.TabIndex = 0;
+            // 
+            // year_beixelos
+            // 
+            this.year_beixelos.AutoSize = true;
+            this.year_beixelos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.year_beixelos.Location = new System.Drawing.Point(166, 23);
+            this.year_beixelos.Name = "year_beixelos";
+            this.year_beixelos.Size = new System.Drawing.Size(46, 24);
+            this.year_beixelos.TabIndex = 1;
+            this.year_beixelos.Text = "Év";
+            this.year_beixelos.UseVisualStyleBackColor = true;
+            this.year_beixelos.CheckedChanged += new System.EventHandler(this.year_beixelos_CheckedChanged);
+            // 
             // stat_grid
             // 
             this.stat_grid.AllowUserToAddRows = false;
@@ -801,6 +752,7 @@ namespace munkaido_nyilvantartas
             this.stat_grid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.stat_grid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.stat_grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.stat_grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn8,
@@ -819,78 +771,138 @@ namespace munkaido_nyilvantartas
             this.stat_grid.TabIndex = 20;
             this.stat_grid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
             // 
-            // year_beixelos
+            // nev
             // 
-            this.year_beixelos.AutoSize = true;
-            this.year_beixelos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.year_beixelos.Location = new System.Drawing.Point(166, 23);
-            this.year_beixelos.Name = "year_beixelos";
-            this.year_beixelos.Size = new System.Drawing.Size(46, 24);
-            this.year_beixelos.TabIndex = 1;
-            this.year_beixelos.Text = "Év";
-            this.year_beixelos.UseVisualStyleBackColor = true;
-            this.year_beixelos.CheckedChanged += new System.EventHandler(this.year_beixelos_CheckedChanged);
+            this.nev.HeaderText = "Név";
+            this.nev.MinimumWidth = 200;
+            this.nev.Name = "nev";
+            this.nev.ReadOnly = true;
             // 
-            // stat_dtp
+            // Column1
             // 
-            this.stat_dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.stat_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.stat_dtp.Location = new System.Drawing.Point(6, 19);
-            this.stat_dtp.Name = "stat_dtp";
-            this.stat_dtp.Size = new System.Drawing.Size(154, 26);
-            this.stat_dtp.TabIndex = 0;
+            this.Column1.HeaderText = "Lakcím";
+            this.Column1.MinimumWidth = 150;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Beosztás";
+            this.Column2.MinimumWidth = 150;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Órabér";
+            this.Column3.MinimumWidth = 150;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Email";
+            this.Column4.MinimumWidth = 150;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Telefonszám";
+            this.Column5.MinimumWidth = 150;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Alkalmazott neve";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 200;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nap";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 100;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Kezdet";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 100;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Vége";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 100;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Név";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 200;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Dátum";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 150;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Összeg";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 150;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.HeaderText = "Név";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 200;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 200;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Munka napja";
+            this.Column8.MinimumWidth = 100;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.HeaderText = "Munka óra";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 150;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 150;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.HeaderText = "Fizetés";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 150;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 150;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Felvett előleg";
+            this.Column6.MinimumWidth = 150;
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Kifizetendő";
+            this.Column7.MinimumWidth = 150;
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.fing_btn);
-            this.groupBox3.Controls.Add(this.kifizetendo_lbl);
-            this.groupBox3.Controls.Add(this.stat_dtp);
-            this.groupBox3.Controls.Add(this.year_beixelos);
-            this.groupBox3.Location = new System.Drawing.Point(7, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(312, 73);
-            this.groupBox3.TabIndex = 23;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Statisztika";
             // 
             // Form1
             // 
@@ -916,9 +928,9 @@ namespace munkaido_nyilvantartas
             this.elolegGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elolegNumericCucc)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stat_grid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -945,12 +957,6 @@ namespace munkaido_nyilvantartas
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView munkavalalloGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nev;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox nameCBOX;
@@ -965,10 +971,6 @@ namespace munkaido_nyilvantartas
         private System.Windows.Forms.Label alkamlazottlabel;
         private System.Windows.Forms.Label munkanap_label;
         private System.Windows.Forms.DataGridView munkaido_datagrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox elolegGroupBox;
         private System.Windows.Forms.DateTimePicker elolegDateTimePicker;
@@ -981,22 +983,32 @@ namespace munkaido_nyilvantartas
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox ElolegComboBox;
         private System.Windows.Forms.DataGridView elolegDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DateTimePicker stat_dtp;
         private System.Windows.Forms.Button fing_btn;
         private System.Windows.Forms.DataGridView stat_grid;
         private System.Windows.Forms.CheckBox year_beixelos;
         private System.Windows.Forms.Label kifizetendo_lbl;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nev;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 
