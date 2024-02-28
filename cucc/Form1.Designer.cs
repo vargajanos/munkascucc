@@ -165,7 +165,7 @@ namespace munkaido_nyilvantartas
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(326, 277);
+            this.groupBox1.Size = new System.Drawing.Size(413, 277);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Munkaválallok";
@@ -345,13 +345,13 @@ namespace munkaido_nyilvantartas
             this.Column3,
             this.Column4,
             this.Column5});
-            this.munkavalalloGrid.Location = new System.Drawing.Point(347, 6);
+            this.munkavalalloGrid.Location = new System.Drawing.Point(425, 6);
             this.munkavalalloGrid.MultiSelect = false;
             this.munkavalalloGrid.Name = "munkavalalloGrid";
             this.munkavalalloGrid.ReadOnly = true;
             this.munkavalalloGrid.RowHeadersVisible = false;
             this.munkavalalloGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.munkavalalloGrid.Size = new System.Drawing.Size(971, 277);
+            this.munkavalalloGrid.Size = new System.Drawing.Size(893, 277);
             this.munkavalalloGrid.TabIndex = 0;
             this.munkavalalloGrid.SelectionChanged += new System.EventHandler(this.munkavalalloGrid_SelectionChanged);
             this.munkavalalloGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
@@ -383,7 +383,7 @@ namespace munkaido_nyilvantartas
             this.groupBox2.Controls.Add(this.munkanap_label);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(450, 195);
+            this.groupBox2.Size = new System.Drawing.Size(413, 195);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Munkaidő";
@@ -513,14 +513,14 @@ namespace munkaido_nyilvantartas
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.munkaido_datagrid.Location = new System.Drawing.Point(462, 11);
+            this.munkaido_datagrid.Location = new System.Drawing.Point(425, 6);
             this.munkaido_datagrid.MultiSelect = false;
             this.munkaido_datagrid.Name = "munkaido_datagrid";
             this.munkaido_datagrid.ReadOnly = true;
             this.munkaido_datagrid.RowHeadersVisible = false;
             this.munkaido_datagrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.munkaido_datagrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.munkaido_datagrid.Size = new System.Drawing.Size(858, 276);
+            this.munkaido_datagrid.Size = new System.Drawing.Size(895, 276);
             this.munkaido_datagrid.TabIndex = 8;
             this.munkaido_datagrid.SelectionChanged += new System.EventHandler(this.munkaido_datagrid_SelectionChanged);
             this.munkaido_datagrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
@@ -552,13 +552,13 @@ namespace munkaido_nyilvantartas
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.elolegDataGrid.Location = new System.Drawing.Point(467, 15);
+            this.elolegDataGrid.Location = new System.Drawing.Point(425, 6);
             this.elolegDataGrid.MultiSelect = false;
             this.elolegDataGrid.Name = "elolegDataGrid";
             this.elolegDataGrid.ReadOnly = true;
             this.elolegDataGrid.RowHeadersVisible = false;
             this.elolegDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.elolegDataGrid.Size = new System.Drawing.Size(853, 272);
+            this.elolegDataGrid.Size = new System.Drawing.Size(895, 272);
             this.elolegDataGrid.TabIndex = 19;
             this.elolegDataGrid.SelectionChanged += new System.EventHandler(this.elolegDataGrid_SelectionChanged);
             this.elolegDataGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
@@ -576,7 +576,7 @@ namespace munkaido_nyilvantartas
             this.elolegGroupBox.Controls.Add(this.ElolegComboBox);
             this.elolegGroupBox.Location = new System.Drawing.Point(6, 6);
             this.elolegGroupBox.Name = "elolegGroupBox";
-            this.elolegGroupBox.Size = new System.Drawing.Size(455, 166);
+            this.elolegGroupBox.Size = new System.Drawing.Size(413, 166);
             this.elolegGroupBox.TabIndex = 18;
             this.elolegGroupBox.TabStop = false;
             this.elolegGroupBox.Text = "Előleg";
@@ -696,7 +696,7 @@ namespace munkaido_nyilvantartas
             this.groupBox3.Controls.Add(this.year_beixelos);
             this.groupBox3.Location = new System.Drawing.Point(7, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(312, 73);
+            this.groupBox3.Size = new System.Drawing.Size(413, 73);
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Statisztika";
@@ -761,13 +761,13 @@ namespace munkaido_nyilvantartas
             this.dataGridViewTextBoxColumn10,
             this.Column6,
             this.Column7});
-            this.stat_grid.Location = new System.Drawing.Point(325, 3);
+            this.stat_grid.Location = new System.Drawing.Point(426, 3);
             this.stat_grid.MultiSelect = false;
             this.stat_grid.Name = "stat_grid";
             this.stat_grid.ReadOnly = true;
             this.stat_grid.RowHeadersVisible = false;
             this.stat_grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stat_grid.Size = new System.Drawing.Size(997, 287);
+            this.stat_grid.Size = new System.Drawing.Size(896, 287);
             this.stat_grid.TabIndex = 20;
             this.stat_grid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.munkavalalloGrid_KeyDown);
             // 
