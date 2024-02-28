@@ -515,7 +515,7 @@ namespace munkaido_nyilvantartas
             {
                 if (selectedIndex == -1)
                 {
-                    index = munkavalalloGrid.CurrentRow.Index;
+                    index = elolegDataGrid.CurrentRow.Index;
                 }
                 else
                 {
@@ -530,9 +530,10 @@ namespace munkaido_nyilvantartas
                     eloleg_modositBTN.Enabled = true;
                     eloleg_torolBTN.Enabled = true;
 
+                    
                     ElolegComboBox.Text = elolegDataGrid.Rows[index].Cells[0].Value.ToString();
                     elolegDateTimePicker.Text = elolegDataGrid.Rows[index].Cells[1].Value.ToString();
-                    elolegNumericCucc.Text = elolegDataGrid.Rows[index].Cells[2].Value.ToString();
+                    elolegNumericCucc.Value = Convert.ToInt32(elolegDataGrid.Rows[index].Cells[2].Value);
                 }
             }
         }
